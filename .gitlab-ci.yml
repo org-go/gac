@@ -1,0 +1,17 @@
+stages:
+  - test
+
+# 公共环境变量
+variables:
+
+# 部署到 test 环境
+build-deploy-test:
+  stage: test
+  when: manual
+  tags:
+    - go-runner
+  before_script:
+    - git clone -b ${CI_JOB_STAGE} https://oauth2:dVn4Eb8usZy-x3rAHJH5@gitlab.ops.pay.fun/ops/deploy.git 
+    - sh deploy/scripts/dev-before.sh
+  script:
+    - sh deploy/scripts/dev-execute.sh

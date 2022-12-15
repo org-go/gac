@@ -1,0 +1,4830 @@
+basePath: /gac/v1
+definitions:
+  adminApi.PageData:
+    properties:
+      pagination:
+        $ref: '#/definitions/common.PaginationResult'
+        description: 分页结果
+    type: object
+  adminApi.Response:
+    properties:
+      code:
+        type: integer
+      data:
+        type: object
+      message:
+        type: string
+    type: object
+  adminApi.token:
+    type: object
+  assembler.AccountAdmin:
+    properties:
+      account:
+        description: 账户
+        type: string
+      account_id:
+        description: sso账号id
+        type: string
+      account_type:
+        description: 账户类型
+        type: integer
+      created_id:
+        description: 创建管理ID
+        type: string
+      created_ip:
+        description: 创建Ip
+        type: string
+      created_time:
+        description: 创建时间
+        type: string
+      created_user:
+        type: string
+      creator_account_type:
+        description: 创建人账户类别(A:超管 B:管理员 C:员工)
+        type: string
+      creator_name:
+        description: 创建人名称
+        type: string
+      is_admin:
+        description: 是否是超级管理员：1:是 0 否
+        type: integer
+      last_login_ip:
+        description: 最后登陆ip
+        type: string
+      last_login_time:
+        description: 最后登陆时间
+        type: string
+      login_count:
+        description: 登陆次数
+        type: integer
+      mobile:
+        description: 手机号
+        type: string
+      name:
+        description: 名称
+        type: string
+      password:
+        description: 登陆密码
+        type: string
+      pk:
+        type: integer
+      role_name:
+        description: 角色名称
+        type: string
+      role_pk:
+        description: 角色id
+        type: integer
+      role_type:
+        description: 角色类型
+        type: string
+      secret:
+        description: 安全秘钥
+        type: string
+      status:
+        description: '状态：1:启用 2：停用  3:  删除'
+        type: integer
+      updated_time:
+        description: 更新时间
+        type: string
+    type: object
+  assembler.AccountProvider:
+    properties:
+      account:
+        description: 账户
+        type: string
+      account_id:
+        description: sso账号id
+        type: string
+      account_type:
+        description: "账户类别 \t\tContact       string `json:\"contact\" gorm:\"column:contact\"`               // 联系人"
+        type: integer
+      address_detail:
+        description: 地址详情
+        type: string
+      created_ip:
+        description: 创建Ip
+        type: string
+      created_time:
+        description: 创建时间
+        type: string
+      created_user:
+        description: 创建人
+        type: string
+      email:
+        description: 电子邮箱
+        type: string
+      last_login_ip:
+        description: 最后登陆ip
+        type: string
+      last_login_time:
+        description: 最后登陆时间
+        type: string
+      login_count:
+        description: 登陆次数
+        type: integer
+      name:
+        description: 名称
+        type: string
+      password:
+        description: 登陆密码
+        type: string
+      phone:
+        description: 手机号
+        type: string
+      pk:
+        type: integer
+      provider_id:
+        description: 服务商id
+        type: integer
+      role_name:
+        description: 角色名称
+        type: string
+      role_pk:
+        description: 角色id
+        type: integer
+      secret:
+        description: 安全秘钥
+        type: string
+      status:
+        description: 状态：1:启用 2：停用
+        type: integer
+      updated_time:
+        description: 更新时间
+        type: string
+    type: object
+  assembler.Action:
+    type: object
+  assembler.AdminAppAssembler:
+    properties:
+      api_host:
+        description: host
+        type: string
+      api_logo:
+        description: logo
+        type: string
+      api_secret:
+        description: secret
+        type: string
+      code:
+        description: code
+        type: string
+      created_time:
+        type: string
+      created_user:
+        type: string
+      id:
+        type: string
+      name:
+        description: 名称
+        type: string
+      org_pk:
+        description: 组织id
+        type: integer
+      pk:
+        type: integer
+      status:
+        description: 状态 1 启用 2 禁用 3 删除
+        type: integer
+      tag:
+        description: app归属
+        type: string
+      type:
+        description: app类别 2：系统 3：服务商
+        type: integer
+      updated_time:
+        type: string
+    type: object
+  assembler.AdminLogAssembler:
+    properties:
+      action:
+        description: 行为
+        type: string
+      action_user:
+        description: 操作人
+        type: string
+      app_pk:
+        description: 应用
+        type: integer
+      created_ip:
+        description: ip
+        type: string
+      created_time:
+        description: 创建时间
+        type: string
+      module:
+        description: 模块
+        type: string
+      org_pk:
+        description: 组织
+        type: integer
+      pk:
+        type: integer
+      record:
+        description: 记录
+        type: string
+    type: object
+  assembler.AdminOrgAssembler:
+    properties:
+      code:
+        description: 组织code
+        type: string
+      contacts:
+        description: 联系人
+        type: string
+      created_time:
+        type: string
+      created_user:
+        type: string
+      icon:
+        description: icon链接
+        type: string
+      mobile:
+        description: 电话
+        type: string
+      name:
+        description: 组织名称
+        type: string
+      pk:
+        type: integer
+      site:
+        description: 站点
+        type: string
+      status:
+        description: 状态 1 启用 2 禁用 3 删除
+        type: integer
+      type:
+        description: 组织类型
+        type: string
+      updated_time:
+        type: string
+    type: object
+  assembler.DcAiotCustomer:
+    properties:
+      addressdetail:
+        description: 地址
+        type: string
+      contact:
+        description: 联系人
+        type: string
+      createddate:
+        description: 创建时间
+        type: string
+      email:
+        description: 邮箱
+        type: string
+      id:
+        description: 服务商id
+        type: integer
+      name:
+        description: 服务商名称
+        type: string
+      phone:
+        description: 手机号
+        type: string
+      regcode:
+        description: 服务商唯一标识码
+        type: string
+      shortname:
+        description: 服务商简称
+        type: string
+      status:
+        description: 状态：0-禁用，1-启用
+        type: integer
+      type:
+        description: 服务商类型1：无开发能力服务商
+        type: integer
+      updateddate:
+        description: 修改时间
+        type: string
+    type: object
+  assembler.MenuAssembler:
+    properties:
+      api_route:
+        description: 接口路由
+        type: string
+      app_code:
+        description: 组织Code
+        type: string
+      app_name:
+        description: 组织名称
+        type: string
+      app_pk:
+        description: 应用
+        type: integer
+      code:
+        description: 权限code
+        type: string
+      created_ip:
+        description: 创建者Ip
+        type: string
+      created_time:
+        description: 创建时间
+        type: string
+      created_user:
+        description: 创建人
+        type: string
+      i18n_code:
+        description: 多语言CODE
+        type: string
+      icon:
+        type: string
+      joins:
+        description: id路径
+        type: string
+      keep_alive:
+        description: 路由缓存： 1：是 2：否
+        type: integer
+      method:
+        description: 请求方法:get,post,put,patch,options
+        type: string
+      name:
+        description: 权限名称
+        type: string
+      org_name:
+        description: 应用名称
+        type: string
+      org_pk:
+        description: 组织
+        type: integer
+      parent_name:
+        description: 上级名称
+        type: string
+      parent_pk:
+        description: 上级id
+        type: integer
+      pk:
+        type: integer
+      redirect:
+        description: 前台路由重定向
+        type: string
+      route:
+        description: 前台路由
+        type: string
+      show:
+        description: 前端显示状态1：显示 2：隐藏
+        type: integer
+      sort:
+        description: 排序
+        type: integer
+      status:
+        description: '状态：1:启用 2：停用  3:  删除'
+        type: integer
+      type:
+        description: 菜单类型： 1：菜单 2：路由 3：按钮
+        type: integer
+      updated_time:
+        description: 更新时间
+        type: string
+      version:
+        description: 版本
+        type: string
+      view_path:
+        description: 前端模板路径
+        type: string
+    type: object
+  assembler.RoleAssembler:
+    properties:
+      code:
+        description: 角色代号
+        type: string
+      created_ip:
+        description: 创建Ip
+        type: string
+      created_time:
+        description: 创建时间
+        type: string
+      created_user:
+        description: 创建人
+        type: string
+      name:
+        description: 角色名称
+        type: string
+      pk:
+        type: integer
+      remark:
+        description: 备注
+        type: string
+      status:
+        description: 1:启用 2：禁用 3：删除
+        type: integer
+      type:
+        description: 角色类别 1:gac管理员 2：sass员工 3：sass服务商
+        type: integer
+      updated_time:
+        description: 更新时间
+        type: string
+    type: object
+  assembler.RoleSubclassAssembler:
+    properties:
+      account_id:
+        description: sso账号id
+        type: string
+      code:
+        description: 角色代号
+        type: string
+      created_ip:
+        description: 创建Ip
+        type: string
+      created_time:
+        description: 创建时间
+        type: string
+      created_user:
+        description: 创建人
+        type: string
+      name:
+        description: 角色名称
+        type: string
+      pk:
+        type: integer
+      remark:
+        description: 备注
+        type: string
+      status:
+        description: 1:启用 2：禁用 3：删除
+        type: integer
+      type:
+        description: 角色类别 1:服务商子账号
+        type: integer
+      updated_time:
+        description: 更新时间
+        type: string
+    type: object
+  common.PaginationResult:
+    properties:
+      current:
+        description: 当前页
+        type: integer
+      page_size:
+        description: 页大小
+        type: integer
+      total:
+        description: 条数
+        type: integer
+    type: object
+  lib.Tree:
+    properties:
+      checked:
+        description: 选中
+        type: boolean
+      children:
+        description: 子节点
+        items:
+          $ref: '#/definitions/lib.Tree'
+        type: array
+      data:
+        description: 自定义对象
+        type: object
+      leaf:
+        description: 叶子节点
+        type: boolean
+      parent_pk:
+        description: 节点父级Id
+        type: integer
+      partial_selected:
+        description: 部分选中
+        type: boolean
+      pk:
+        description: 节点Id
+        type: integer
+      title:
+        description: 节点名字
+        type: string
+    type: object
+  req.AccountAdmin:
+    properties:
+      account:
+        description: 登录账号
+        type: string
+      account_id:
+        description: 账户ID 更新时使用
+        type: string
+      account_name:
+        description: 账号名称
+        type: string
+      mobile:
+        description: 手机号
+        type: string
+      password:
+        description: 密码
+        type: string
+      role_pk:
+        description: 角色主键值
+        type: integer
+    required:
+    - account
+    - account_name
+    type: object
+  req.AccountLogin:
+    properties:
+      account:
+        description: 账号
+        type: string
+      account_type:
+        description: 账户类型 0x01 员工 ，0x02 服务商，0x03 商户，0x04 消费者
+        type: integer
+      mobile:
+        description: 手机号
+        type: string
+      password:
+        description: 密码
+        type: string
+    type: object
+  req.AccountOperation:
+    properties:
+      account_id:
+        description: 账号ID
+        type: string
+      status:
+        description: 状态：1:启用 2：停用
+        type: integer
+    required:
+    - account_id
+    type: object
+  req.AccountProvider:
+    properties:
+      account:
+        description: 登录账号
+        type: string
+      account_id:
+        description: 账户ID 更新时使用
+        type: string
+      account_name:
+        description: 账号名称
+        type: string
+      mobile:
+        description: 手机号
+        type: string
+      password:
+        description: 密码
+        type: string
+      provd_id:
+        description: 服务商ID
+        type: integer
+      role_pk:
+        description: 角色主键值
+        type: integer
+    required:
+    - account
+    - account_name
+    type: object
+  req.AccountSubclassBindSubRoleReq:
+    properties:
+      id:
+        description: 子账户
+        type: string
+      sub_role_pk:
+        description: 子账号角色id
+        type: integer
+    required:
+    - id
+    - sub_role_pk
+    type: object
+  req.AccountSubclassCreateReq:
+    properties:
+      account:
+        description: 账户
+        type: string
+      name:
+        description: 名称
+        type: string
+      password:
+        description: 登陆密码
+        type: string
+    required:
+    - account
+    - password
+    type: object
+  req.AccountSubclassSearchReq:
+    properties:
+      account_id:
+        type: string
+      current:
+        description: 当前页
+        type: integer
+      id:
+        type: string
+      page_size:
+        description: 页大小
+        type: integer
+      pagination:
+        description: 是否使用分页查询
+        type: boolean
+      status:
+        type: integer
+    type: object
+  req.AccountSubclassStatusReq:
+    properties:
+      id:
+        description: 账户ID
+        type: string
+      status:
+        description: 状态:1:启用 2:禁用
+        type: integer
+    required:
+    - id
+    - status
+    type: object
+  req.AcctChangePasswd:
+    properties:
+      password:
+        description: 密码
+        type: string
+    type: object
+  req.AddMenuReq:
+    properties:
+      api_route:
+        description: 接口路由
+        type: string
+      app_pk:
+        description: 应用
+        type: integer
+      code:
+        description: 权限code
+        type: string
+      created_ip:
+        description: 创建者Ip
+        type: string
+      created_user:
+        description: 创建人
+        type: string
+      i18n_code:
+        description: 多语言CODE
+        type: string
+      icon:
+        type: string
+      keep_alive:
+        description: 路由缓存： 1：是 2：否
+        type: integer
+      method:
+        description: 请求方法:get,post,put,patch,options
+        type: string
+      name:
+        description: 权限名称
+        type: string
+      org_pk:
+        description: 组织
+        type: integer
+      parent_pk:
+        description: 上级id
+        type: integer
+      redirect:
+        description: 前台路由重定向
+        type: string
+      route:
+        description: 前台路由
+        type: string
+      show:
+        description: 前端显示状态 1：显示 2：隐藏
+        type: integer
+      sort:
+        description: 排序
+        type: integer
+      status:
+        description: '状态：1:启用 2：停用  3:  删除'
+        type: integer
+      type:
+        description: 菜单类型： 1：菜单 2：路由 3：按钮
+        type: integer
+      view_path:
+        description: 前端模板路径
+        type: string
+    required:
+    - name
+    - show
+    - status
+    - type
+    type: object
+  req.AddPermissionReq:
+    properties:
+      created_ip:
+        description: 创建者Ip
+        type: string
+      created_user:
+        description: 创建人
+        type: string
+      permission_ids:
+        description: 菜单Ids 多个逗号隔开
+        type: string
+      role_pk:
+        description: role_pk
+        type: integer
+      status:
+        description: 状态：1:启用 2：停用  3:删除
+        type: integer
+    required:
+    - role_pk
+    - status
+    type: object
+  req.AddRoleReq:
+    properties:
+      code:
+        description: 角色code
+        type: string
+      created_ip:
+        description: 创建者Ip
+        type: string
+      created_user:
+        description: 创建人
+        type: string
+      name:
+        description: 角色名称
+        type: string
+      remark:
+        type: string
+      status:
+        description: '状态：1:启用 2：停用  3:  删除'
+        type: integer
+      type:
+        description: 角色类别 1:管理员 2：普通用户 3： 服务商
+        type: integer
+    required:
+    - name
+    - status
+    - type
+    type: object
+  req.AddSubclassPermissionReq:
+    properties:
+      created_ip:
+        description: 创建者Ip
+        type: string
+      created_user:
+        description: 创建人
+        type: string
+      permission_ids:
+        description: 菜单Ids 多个逗号隔开
+        type: string
+      status:
+        description: 状态：1:启用 2：停用  3:删除
+        type: integer
+      sub_role_pk:
+        description: sub_role_pk
+        type: integer
+    required:
+    - status
+    - sub_role_pk
+    type: object
+  req.AddSubclassRoleReq:
+    properties:
+      account_id:
+        description: sso账号id
+        type: string
+      code:
+        description: 角色code
+        type: string
+      created_ip:
+        description: 创建者Ip
+        type: string
+      created_user:
+        description: 创建人
+        type: string
+      name:
+        description: 角色名称
+        type: string
+      remark:
+        type: string
+      status:
+        description: '状态：1:启用 2：停用  3:  删除'
+        type: integer
+    required:
+    - name
+    - status
+    type: object
+  req.AppSearchReq:
+    properties:
+      current:
+        description: 当前页
+        type: integer
+      name:
+        type: string
+      orgs:
+        items:
+          type: integer
+        type: array
+      page_size:
+        description: 页大小
+        type: integer
+      pagination:
+        description: 是否使用分页查询
+        type: boolean
+      pk:
+        type: integer
+      status:
+        type: integer
+    type: object
+  req.AppStatusReq:
+    properties:
+      pk:
+        type: integer
+      status:
+        type: integer
+    required:
+    - pk
+    - status
+    type: object
+  req.AuthSubclassResetPasswordReq:
+    properties:
+      old_password:
+        description: 旧密码
+        type: string
+      password:
+        description: 新密码
+        type: string
+    required:
+    - old_password
+    - password
+    type: object
+  req.AuthSubclassUpdateReq:
+    properties:
+      mobile:
+        description: 电话
+        type: string
+      name:
+        description: 账户名称
+        type: string
+    type: object
+  req.LogSearchReq:
+    properties:
+      action:
+        type: string
+      action_user:
+        type: string
+      app_pk:
+        type: integer
+      current:
+        description: 当前页
+        type: integer
+      module:
+        type: string
+      org_pk:
+        type: integer
+      page_size:
+        description: 页大小
+        type: integer
+      pagination:
+        description: 是否使用分页查询
+        type: boolean
+    type: object
+  req.MenuReq:
+    properties:
+      app_pk:
+        description: 应用ID
+        type: integer
+      current:
+        description: 当前页
+        type: integer
+      name:
+        description: 菜单名称
+        type: string
+      org_pk:
+        description: 组织ID
+        type: integer
+      page_size:
+        description: 页大小
+        type: integer
+      pagination:
+        description: 是否使用分页查询
+        type: boolean
+      parent_pk:
+        description: 父级Pk
+        type: string
+      pk:
+        description: pk
+        type: integer
+      pks:
+        description: pks
+        items:
+          type: integer
+        type: array
+      role_pk:
+        description: 角色ID
+        type: integer
+      role_type:
+        description: 角色类型 1:管理员 2：员工 3： 服务商
+        type: integer
+      statues:
+        description: '状态：1:启用 2：停用  3:  删除 status 数组形式'
+        items:
+          type: integer
+        type: array
+      status:
+        description: '状态：1:启用 2：停用  3:  删除'
+        type: integer
+      type:
+        description: type
+        type: integer
+      types:
+        description: types  type数组形式
+        items:
+          type: integer
+        type: array
+    type: object
+  req.OrgSearchReq:
+    properties:
+      current:
+        description: 当前页
+        type: integer
+      name:
+        type: string
+      page_size:
+        description: 页大小
+        type: integer
+      pagination:
+        description: 是否使用分页查询
+        type: boolean
+      pk:
+        type: integer
+      status:
+        type: integer
+    type: object
+  req.OrgStatusReq:
+    properties:
+      pk:
+        type: integer
+      status:
+        type: integer
+    required:
+    - pk
+    type: object
+  req.PermissionAuthReq:
+    properties:
+      apps:
+        description: 应用CODE, GAC子系统默认单选:GAC
+        items:
+          type: string
+        type: array
+      orgs:
+        description: 组织CODE
+        items:
+          type: string
+        type: array
+    type: object
+  req.QueryPermissionReq:
+    properties:
+      role_pk:
+        description: role_pk
+        type: integer
+    required:
+    - role_pk
+    type: object
+  req.QuerySubclassPermissionReq:
+    properties:
+      sub_role_pk:
+        description: sub_role_pk
+        type: integer
+    type: object
+  req.ResetAccount:
+    properties:
+      account_id:
+        description: 账户ID
+        type: string
+    type: object
+  req.RolePageReq:
+    properties:
+      created_user:
+        description: 创建人名称
+        type: string
+      current:
+        description: 当前页
+        type: integer
+      name:
+        description: 角色名称
+        type: string
+      page_size:
+        description: 页大小
+        type: integer
+      pagination:
+        description: 是否使用分页查询
+        type: boolean
+      pk:
+        description: pk
+        type: integer
+      status:
+        description: '状态：1:启用 2：停用  3:  删除'
+        type: integer
+      type:
+        description: 角色类别 1:管理员 2：普通用户 3： 服务商
+        type: integer
+    type: object
+  req.RoleReq:
+    properties:
+      created_user:
+        description: 创建人名称
+        type: string
+      name:
+        description: 角色名称
+        type: string
+      pk:
+        description: pk
+        type: integer
+      status:
+        description: '状态：1:启用 2：停用  3:  删除'
+        type: integer
+      type:
+        description: 角色类别 1:管理员 2：普通用户 3： 服务商
+        type: integer
+    type: object
+  req.SsoPassportAuthReq:
+    properties:
+      method:
+        type: string
+      uri:
+        type: string
+    required:
+    - method
+    - uri
+    type: object
+  req.SubclassMenuReq:
+    properties:
+      current:
+        description: 当前页
+        type: integer
+      name:
+        description: 菜单名称
+        type: string
+      page_size:
+        description: 页大小
+        type: integer
+      pagination:
+        description: 是否使用分页查询
+        type: boolean
+      parent_pk:
+        description: 父级Pk
+        type: string
+      pk:
+        description: pk
+        type: integer
+      pks:
+        description: pks
+        items:
+          type: integer
+        type: array
+      role_pk:
+        description: 角色ID
+        type: integer
+      statues:
+        description: '状态：1:启用 2：停用  3:  删除'
+        items:
+          type: integer
+        type: array
+      status:
+        description: '状态：1:启用 2：停用  3:  删除'
+        type: integer
+      type:
+        description: 角色类型：1:服务商类型 2：服务商子账号类型
+        type: integer
+    type: object
+  req.SubclassRolePageReq:
+    properties:
+      account_id:
+        description: sso账号id
+        type: string
+      created_user:
+        description: 创建人名称
+        type: string
+      current:
+        description: 当前页
+        type: integer
+      name:
+        description: 角色名称
+        type: string
+      page_size:
+        description: 页大小
+        type: integer
+      pagination:
+        description: 是否使用分页查询
+        type: boolean
+      pk:
+        description: pk
+        type: integer
+      status:
+        description: '状态：1:启用 2：停用  3:  删除'
+        type: integer
+    type: object
+  req.SubclassRoleReq:
+    properties:
+      account_id:
+        description: sso账号id
+        type: string
+      created_user:
+        description: 创建人名称
+        type: string
+      name:
+        description: 角色名称
+        type: string
+      pk:
+        description: pk
+        type: integer
+      status:
+        description: '状态：1:启用 2：停用  3:  删除'
+        type: integer
+    type: object
+  req.UpdateAccountAdmin:
+    properties:
+      account_id:
+        description: 账户ID 更新时使用
+        type: string
+      account_name:
+        description: 账号名称
+        type: string
+      mobile:
+        description: 手机号
+        type: string
+      role_pk:
+        description: 角色主键值
+        type: integer
+    type: object
+  req.UpdateMenuReq:
+    properties:
+      api_route:
+        description: 接口路由
+        type: string
+      app_pk:
+        description: 应用
+        type: integer
+      code:
+        description: 权限code
+        type: string
+      created_ip:
+        description: 创建者Ip
+        type: string
+      created_user:
+        description: 创建人
+        type: string
+      i18n_code:
+        description: 多语言CODE
+        type: string
+      icon:
+        type: string
+      keep_alive:
+        description: 路由缓存： 1：是 2：否
+        type: integer
+      method:
+        description: 请求方法:get,post,put,patch,options
+        type: string
+      name:
+        description: 权限名称
+        type: string
+      org_pk:
+        description: 组织
+        type: integer
+      parent_pk:
+        description: 上级id
+        type: integer
+      pk:
+        description: Pk
+        type: integer
+      redirect:
+        description: 前台路由重定向
+        type: string
+      route:
+        description: 前台路由
+        type: string
+      show:
+        description: 前端显示状态 1：显示 2：隐藏
+        type: integer
+      sort:
+        description: 排序
+        type: integer
+      status:
+        description: '状态：1:启用 2：停用  3:  删除'
+        type: integer
+      type:
+        description: 菜单类型： 1：菜单 2：路由 3：按钮
+        type: integer
+      view_path:
+        description: 前端模板路径
+        type: string
+    required:
+    - name
+    - show
+    - status
+    - type
+    type: object
+  req.UpdateMenuStatusReq:
+    properties:
+      created_ip:
+        description: 创建者Ip
+        type: string
+      created_user:
+        description: 创建人
+        type: string
+      pk:
+        description: Pk
+        type: integer
+      pks:
+        description: pks
+        items:
+          type: integer
+        type: array
+      status:
+        description: '状态：1:启用 2：停用  3:  删除'
+        type: integer
+    required:
+    - status
+    type: object
+  req.UpdateRoleReq:
+    properties:
+      code:
+        description: 角色code
+        type: string
+      created_ip:
+        description: 创建者Ip
+        type: string
+      created_user:
+        description: 创建人
+        type: string
+      name:
+        description: 角色名称
+        type: string
+      pk:
+        description: Pk
+        type: integer
+      remark:
+        type: string
+      status:
+        description: '状态：1:启用 2：停用  3:  删除'
+        type: integer
+      type:
+        description: 角色类别 1:管理员 2：普通用户 3： 服务商
+        type: integer
+    required:
+    - name
+    - status
+    - type
+    type: object
+  req.UpdateRoleStatusReq:
+    properties:
+      created_ip:
+        description: 创建者Ip
+        type: string
+      created_user:
+        description: 创建人
+        type: string
+      pk:
+        description: Pk
+        type: integer
+      status:
+        description: 状态：1:启用 2：停用
+        type: integer
+    required:
+    - status
+    type: object
+  req.UpdateSubclassRoleReq:
+    properties:
+      account_id:
+        description: sso账号id
+        type: string
+      code:
+        description: 角色code
+        type: string
+      created_ip:
+        description: 创建者Ip
+        type: string
+      created_user:
+        description: 创建人
+        type: string
+      name:
+        description: 角色名称
+        type: string
+      pk:
+        description: Pk
+        type: integer
+      remark:
+        type: string
+      status:
+        description: '状态：1:启用 2：停用  3:  删除'
+        type: integer
+    required:
+    - name
+    - status
+    type: object
+  resp.AccountSubclassResp:
+    properties:
+      account:
+        description: 账户
+        type: string
+      created_ip:
+        description: 创建Ip
+        type: string
+      created_time:
+        description: 创建时间
+        type: string
+      created_user:
+        type: string
+      id:
+        description: 对外ID
+        type: string
+      last_login_ip:
+        description: 最后登陆ip
+        type: string
+      last_login_time:
+        description: 最后登陆时间
+        type: string
+      login_count:
+        description: 登陆次数
+        type: integer
+      name:
+        description: 名称
+        type: string
+      status:
+        description: 状态：1:启用 2：停用 3:删除
+        type: integer
+      sub_role_pk:
+        description: 子账号角色id
+        type: integer
+      updated_time:
+        description: 更新时间
+        type: string
+    type: object
+  resp.AuthAdminMenuResp:
+    properties:
+      api_route:
+        description: 后端接口路由
+        type: string
+      code:
+        description: code
+        type: string
+      i18n_code:
+        description: 多语言code
+        type: string
+      icon:
+        description: icon
+        type: string
+      keep_alive:
+        description: 缓存 1:启用 2：禁用
+        type: integer
+      method:
+        description: 请求方法:GET,POST,PUT,PATCH,DELETE
+        type: string
+      name:
+        description: 名称
+        type: string
+      parent_name:
+        description: 上级名称
+        type: string
+      parent_pk:
+        type: integer
+      pk:
+        type: integer
+      redirect:
+        description: 前端路由重定向
+        type: string
+      route:
+        description: 前端路由
+        type: string
+      show:
+        description: 1:显示 2：隐藏
+        type: integer
+      sort:
+        description: 排序
+        type: integer
+      type:
+        description: 类型： 1：菜单 3：按钮
+        type: integer
+      view_path:
+        description: 前端文件路径
+        type: string
+    type: object
+  resp.LoginResp:
+    properties:
+      app_codes:
+        description: 应用code列表
+        items:
+          type: string
+        type: array
+      type:
+        description: '超级管理员: A， 管理员：B, 员工：C, 服务商: D， 外部子账户：I'
+        type: string
+    type: object
+  resp.OptionResp:
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+    type: object
+  resp.QueryPermissionResp:
+    additionalProperties:
+      items:
+        $ref: '#/definitions/assembler.MenuAssembler'
+      type: array
+    type: object
+  resp.SsoMenuResps:
+    additionalProperties:
+      $ref: '#/definitions/resp.SsoResp'
+    type: object
+  resp.SsoResp:
+    properties:
+      menu:
+        description: Path string              `json:"path"`
+        items:
+          $ref: '#/definitions/resp.AuthAdminMenuResp'
+        type: array
+      name:
+        type: string
+    type: object
+  ssoApi.Response:
+    properties:
+      code:
+        type: integer
+      data:
+        type: object
+      message:
+        type: string
+    type: object
+  ssoApi.token:
+    type: object
+host: api.t.dev.pay.fun
+info:
+  contact:
+    name: org.pm.gac.service
+    url: https://www.apifox.cn/web/main
+  description: GAC授权中心
+  license:
+    name: GIN.swagger
+    url: https://github.com/swaggo/swag/blob/master/README_zh-CN.md#%E5%A6%82%E4%BD%95%E4%B8%8Egin%E9%9B%86%E6%88%90
+  termsOfService: https://paymedia.yuque.com/os/hb9uhc
+  title: GAC授权中心
+  version: "2.0"
+paths:
+  /admin/accounts/create:
+    post:
+      description: 创建管理员账户
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.AccountAdmin'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      summary: 创建管理员账户
+      tags:
+      - GAC/账户管理
+  /admin/accounts/delete:
+    post:
+      description: 删除
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.AccountOperation'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: data=OK
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      summary: 删除
+      tags:
+      - GAC/账户管理
+  /admin/accounts/disable:
+    post:
+      description: 禁用/启用
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.AccountOperation'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: data=OK
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      summary: 禁用/启用
+      tags:
+      - GAC/账户管理
+  /admin/accounts/page:
+    get:
+      description: 查询用户列表
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - default: 1
+        description: 分页索引
+        in: query
+        name: current
+        type: integer
+      - default: 10
+        description: 分页大小
+        in: query
+        name: page_size
+        type: integer
+      - default: true
+        description: 是否分页
+        in: query
+        name: pagination
+        required: true
+        type: boolean
+      - description: 账号
+        in: query
+        name: account
+        type: string
+      - description: 账号名称模糊查询
+        in: query
+        name: like_account_name
+        type: string
+      - description: 角色pk
+        in: query
+        name: role_pk
+        type: integer
+      - description: 创建人名称
+        in: query
+        name: creator_name
+        type: string
+      - description: 创建人账户类别(A:超管 B:管理员 C:员工)
+        in: query
+        name: creator_account_type
+        type: string
+      - description: 状态：1:启用 2：停用
+        in: query
+        name: status
+        type: integer
+      - description: 角色类别 1:gac管理员 2：sass员工 3：sass服务商
+        in: query
+        name: role_type
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: expiry:时间
+          schema:
+            allOf:
+            - $ref: '#/definitions/adminApi.Response'
+            - properties:
+                data:
+                  allOf:
+                  - $ref: '#/definitions/adminApi.PageData'
+                  - properties:
+                      data:
+                        items:
+                          $ref: '#/definitions/assembler.AccountAdmin'
+                        type: array
+                    type: object
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      summary: 查询用户列表
+      tags:
+      - GAC/账户管理
+  /admin/accounts/reset_password:
+    post:
+      description: 重置密码
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.ResetAccount'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: data=OK
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      summary: 重置密码
+      tags:
+      - GAC/账户管理
+  /admin/accounts/update:
+    post:
+      description: 更新
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.UpdateAccountAdmin'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: data=OK
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      summary: 更新
+      tags:
+      - GAC/账户管理
+  /admin/app/create:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/assembler.AdminAppAssembler'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/adminApi.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/assembler.AdminAppAssembler'
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      security:
+      - x-token: []
+      summary: 添加应用
+      tags:
+      - GAC/应用管理
+  /admin/app/delete:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.AppStatusReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      security:
+      - x-token: []
+      summary: 删除应用
+      tags:
+      - GAC/应用管理
+  /admin/app/disable:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.AppStatusReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      security:
+      - x-token: []
+      summary: 启用/停用应用
+      tags:
+      - GAC/应用管理
+  /admin/app/option:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.AppSearchReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/adminApi.Response'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/resp.OptionResp'
+                  type: array
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      security:
+      - x-token: []
+      summary: 下拉列表
+      tags:
+      - GAC/应用管理
+  /admin/app/page:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.AppSearchReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/adminApi.Response'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/assembler.AdminAppAssembler'
+                  type: array
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      security:
+      - x-token: []
+      summary: 应用列表
+      tags:
+      - GAC/应用管理
+  /admin/app/update:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/assembler.AdminAppAssembler'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/adminApi.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/assembler.AdminAppAssembler'
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      security:
+      - x-token: []
+      summary: 编辑应用
+      tags:
+      - GAC/应用管理
+  /admin/auth/my_permission:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.PermissionAuthReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/adminApi.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/resp.SsoMenuResps'
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      security:
+      - x-token: []
+      summary: 我的权限（菜单+按钮）
+      tags:
+      - GAC/AUTH
+  /admin/enterprise/accounts/create:
+    post:
+      description: 创建企业账户
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.AccountAdmin'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      summary: 创建企业账户
+      tags:
+      - GAC/企业账户管理
+  /admin/enterprise/accounts/delete:
+    post:
+      description: 删除
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.AccountOperation'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: data=OK
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      summary: 删除
+      tags:
+      - GAC/企业账户管理
+  /admin/enterprise/accounts/disable:
+    post:
+      description: 禁用/启用
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.AccountOperation'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: data=OK
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      summary: 禁用/启用
+      tags:
+      - GAC/企业账户管理
+  /admin/enterprise/accounts/page:
+    get:
+      description: 查询账户列表
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - default: 1
+        description: 分页索引
+        in: query
+        name: current
+        type: integer
+      - default: 10
+        description: 分页大小
+        in: query
+        name: page_size
+        type: integer
+      - default: true
+        description: 是否分页
+        in: query
+        name: pagination
+        required: true
+        type: boolean
+      - description: 账号
+        in: query
+        name: account
+        type: string
+      - description: 账号名称模糊查询
+        in: query
+        name: like_account_name
+        type: string
+      - description: 角色pk
+        in: query
+        name: role_pk
+        type: integer
+      - description: 创建人名称
+        in: query
+        name: creator_name
+        type: string
+      - description: 创建人账户类别(A:超管 B:管理员 C:员工)
+        in: query
+        name: creator_account_type
+        type: string
+      - description: 状态：1:启用 2：停用
+        in: query
+        name: status
+        type: integer
+      - description: 角色类别 1:gac管理员 2：sass员工 3：sass服务商
+        in: query
+        name: role_type
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: expiry:时间
+          schema:
+            allOf:
+            - $ref: '#/definitions/adminApi.Response'
+            - properties:
+                data:
+                  allOf:
+                  - $ref: '#/definitions/adminApi.PageData'
+                  - properties:
+                      data:
+                        items:
+                          $ref: '#/definitions/assembler.AccountAdmin'
+                        type: array
+                    type: object
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      summary: 查询账户列表
+      tags:
+      - GAC/企业账户管理
+  /admin/enterprise/accounts/reset_password:
+    post:
+      description: 重置密码
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.ResetAccount'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: data=OK
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      summary: 重置密码
+      tags:
+      - GAC/企业账户管理
+  /admin/enterprise/accounts/update:
+    post:
+      description: 更新
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.UpdateAccountAdmin'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: data=OK
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      summary: 更新
+      tags:
+      - GAC/企业账户管理
+  /admin/log/action_option:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/adminApi.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/assembler.Action'
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      security:
+      - x-token: []
+      summary: 行为下拉
+      tags:
+      - GAC/日志管理
+  /admin/log/module_option:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.OrgSearchReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/adminApi.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/assembler.Action'
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      security:
+      - x-token: []
+      summary: 模块下拉
+      tags:
+      - GAC/日志管理
+  /admin/log/page:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.LogSearchReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/adminApi.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/assembler.AdminLogAssembler'
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      security:
+      - x-token: []
+      summary: 日志列表
+      tags:
+      - GAC/日志管理
+  /admin/login:
+    post:
+      description: 登录
+      parameters:
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.AccountLogin'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: expiry:时间
+          schema:
+            allOf:
+            - $ref: '#/definitions/adminApi.Response'
+            - properties:
+                data:
+                  allOf:
+                  - $ref: '#/definitions/resp.LoginResp'
+                  - properties:
+                      token:
+                        allOf:
+                        - $ref: '#/definitions/adminApi.token'
+                        - properties:
+                            access_token:
+                              type: string
+                            expiry:
+                              type: string
+                          type: object
+                    type: object
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      summary: 登录
+      tags:
+      - GAC/账户管理
+  /admin/menu/create:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.AddMenuReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      security:
+      - x-token: []
+      summary: 增加菜单
+      tags:
+      - GAC/菜单管理
+  /admin/menu/delete:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.UpdateMenuStatusReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      security:
+      - x-token: []
+      summary: 菜单删除
+      tags:
+      - GAC/菜单管理
+  /admin/menu/disable:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.UpdateMenuStatusReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      security:
+      - x-token: []
+      summary: 菜单禁用/启用
+      tags:
+      - GAC/菜单管理
+  /admin/menu/page:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.MenuReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/adminApi.Response'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/assembler.MenuAssembler'
+                  type: array
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      security:
+      - x-token: []
+      summary: 菜单列表
+      tags:
+      - GAC/菜单管理
+  /admin/menu/tree:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/adminApi.Response'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/lib.Tree'
+                  type: array
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      security:
+      - x-token: []
+      summary: 菜单树形结构
+      tags:
+      - GAC/菜单管理
+  /admin/menu/update:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.UpdateMenuReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      security:
+      - x-token: []
+      summary: 更新菜单
+      tags:
+      - GAC/菜单管理
+  /admin/org/create:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/assembler.AdminOrgAssembler'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/adminApi.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/assembler.AdminOrgAssembler'
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      security:
+      - x-token: []
+      summary: 添加组织
+      tags:
+      - GAC/组织管理
+  /admin/org/delete:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.OrgStatusReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      security:
+      - x-token: []
+      summary: 删除组织
+      tags:
+      - GAC/组织管理
+  /admin/org/option:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/adminApi.Response'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/resp.OptionResp'
+                  type: array
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      security:
+      - x-token: []
+      summary: 下拉列表
+      tags:
+      - GAC/组织管理
+  /admin/org/page:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.OrgSearchReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/adminApi.Response'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/assembler.AdminOrgAssembler'
+                  type: array
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      security:
+      - x-token: []
+      summary: 组织列表
+      tags:
+      - GAC/组织管理
+  /admin/org/update:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/assembler.AdminOrgAssembler'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/adminApi.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/assembler.AdminOrgAssembler'
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      security:
+      - x-token: []
+      summary: 编辑组织
+      tags:
+      - GAC/组织管理
+  /admin/permission/create:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.AddPermissionReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      security:
+      - x-token: []
+      summary: 添加权限
+      tags:
+      - GAC/管理员角色权限管理
+  /admin/permission/menus:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.MenuReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/adminApi.Response'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/assembler.MenuAssembler'
+                  type: array
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      security:
+      - x-token: []
+      summary: 菜单列表
+      tags:
+      - GAC/管理员角色查询菜单列表
+  /admin/permission/query:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.QueryPermissionReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/adminApi.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/resp.QueryPermissionResp'
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      security:
+      - x-token: []
+      summary: 查询权限
+      tags:
+      - GAC/管理员角色权限管理
+  /admin/provd/accounts/create:
+    post:
+      description: 创建服务商账户
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.AccountProvider'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      summary: 创建服务商账户
+      tags:
+      - GAC/服务商账户管理
+  /admin/provd/accounts/delete:
+    post:
+      description: 删除
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.AccountOperation'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: data=OK
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      summary: 删除
+      tags:
+      - GAC/服务商账户管理
+  /admin/provd/accounts/disable:
+    post:
+      description: 禁用/启用
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.AccountOperation'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: data=OK
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      summary: 禁用/启用
+      tags:
+      - GAC/服务商账户管理
+  /admin/provd/accounts/page:
+    get:
+      description: 查询用户列表
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - default: 1
+        description: 分页索引
+        in: query
+        name: current
+        type: integer
+      - default: 10
+        description: 分页大小
+        in: query
+        name: page_size
+        type: integer
+      - default: true
+        description: 是否分页
+        in: query
+        name: pagination
+        required: true
+        type: boolean
+      - description: 账号
+        in: query
+        name: account
+        type: string
+      - description: 账号名称模糊查询
+        in: query
+        name: like_account_name
+        type: string
+      - description: 角色pk
+        in: query
+        name: role_pk
+        type: integer
+      - description: 创建人名称
+        in: query
+        name: creator_name
+        type: string
+      - description: 创建人账户类别(A:超管 B:管理员 C:员工)
+        in: query
+        name: creator_account_type
+        type: string
+      - description: 状态：1:启用 2：停用
+        in: query
+        name: status
+        type: integer
+      - description: 角色类别 1:gac管理员 2：sass员工 3：sass服务商
+        in: query
+        name: role_type
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: expiry:时间
+          schema:
+            allOf:
+            - $ref: '#/definitions/adminApi.Response'
+            - properties:
+                data:
+                  allOf:
+                  - $ref: '#/definitions/adminApi.PageData'
+                  - properties:
+                      data:
+                        items:
+                          $ref: '#/definitions/assembler.AccountProvider'
+                        type: array
+                    type: object
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      summary: 查询用户列表
+      tags:
+      - GAC/服务商账户管理
+  /admin/provd/accounts/update:
+    post:
+      description: 更新
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.AccountProvider'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: data=OK
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      summary: 更新
+      tags:
+      - GAC/服务商账户管理
+  /admin/provd/provider/list:
+    get:
+      description: 查询服务商列表
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: 名称模糊查询
+        in: query
+        name: like_name
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: 无分页
+          schema:
+            allOf:
+            - $ref: '#/definitions/adminApi.Response'
+            - properties:
+                data:
+                  allOf:
+                  - $ref: '#/definitions/adminApi.PageData'
+                  - properties:
+                      data:
+                        items:
+                          $ref: '#/definitions/assembler.DcAiotCustomer'
+                        type: array
+                    type: object
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      summary: 查询服务商列表
+      tags:
+      - GAC/服务商账户管理
+  /admin/provd/provider/reset_password:
+    post:
+      description: 重置密码
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.ResetAccount'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: data=OK
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      summary: 重置密码
+      tags:
+      - GAC/服务商账户管理
+  /admin/role/create:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.AddRoleReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      security:
+      - x-token: []
+      summary: 添加角色
+      tags:
+      - GAC/管理员角色管理
+  /admin/role/delete:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.UpdateRoleStatusReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      security:
+      - x-token: []
+      summary: 角色删除
+      tags:
+      - GAC/管理员角色管理
+  /admin/role/disable:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.UpdateRoleStatusReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      security:
+      - x-token: []
+      summary: 角色禁用/启用
+      tags:
+      - GAC/管理员角色管理
+  /admin/role/option:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.RoleReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/adminApi.Response'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/assembler.RoleAssembler'
+                  type: array
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      security:
+      - x-token: []
+      summary: 角色列表下拉
+      tags:
+      - GAC/管理员角色管理
+  /admin/role/page:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.RolePageReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/adminApi.Response'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/assembler.RoleAssembler'
+                  type: array
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      security:
+      - x-token: []
+      summary: 角色列表
+      tags:
+      - GAC/管理员角色管理
+  /admin/role/update:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.UpdateRoleReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      security:
+      - x-token: []
+      summary: 更新角色
+      tags:
+      - GAC/管理员角色管理
+  /admin/service_permission/create:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.AddPermissionReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      security:
+      - x-token: []
+      summary: 添加权限
+      tags:
+      - GAC/服务商角色权限管理
+  /admin/service_permission/menus:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.MenuReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/adminApi.Response'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/assembler.MenuAssembler'
+                  type: array
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      security:
+      - x-token: []
+      summary: 菜单列表
+      tags:
+      - GAC/服务商角色查询菜单列表
+  /admin/service_permission/query:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.QueryPermissionReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/adminApi.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/resp.QueryPermissionResp'
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      security:
+      - x-token: []
+      summary: 查询权限
+      tags:
+      - GAC/服务商角色权限管理
+  /admin/service_role/create:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.AddRoleReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      security:
+      - x-token: []
+      summary: 添加角色
+      tags:
+      - GAC/服务商角色管理
+  /admin/service_role/delete:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.UpdateRoleStatusReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      security:
+      - x-token: []
+      summary: 角色删除
+      tags:
+      - GAC/服务商角色管理
+  /admin/service_role/disable:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.UpdateRoleStatusReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      security:
+      - x-token: []
+      summary: 角色禁用/启用
+      tags:
+      - GAC/服务商角色管理
+  /admin/service_role/page:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.RolePageReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/adminApi.Response'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/assembler.RoleAssembler'
+                  type: array
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      security:
+      - x-token: []
+      summary: 角色列表
+      tags:
+      - GAC/服务商角色管理
+  /admin/service_role/update:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.UpdateRoleReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      security:
+      - x-token: []
+      summary: 更新角色
+      tags:
+      - GAC/服务商角色管理
+  /admin/staff_permission/create:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.AddPermissionReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      security:
+      - x-token: []
+      summary: 添加权限
+      tags:
+      - GAC/员工角色权限管理
+  /admin/staff_permission/menus:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.MenuReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/adminApi.Response'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/assembler.MenuAssembler'
+                  type: array
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      security:
+      - x-token: []
+      summary: 菜单列表
+      tags:
+      - GAC/员工角色查询菜单列表
+  /admin/staff_permission/query:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.QueryPermissionReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/adminApi.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/resp.QueryPermissionResp'
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      security:
+      - x-token: []
+      summary: 查询权限
+      tags:
+      - GAC/员工角色权限管理
+  /admin/staff_role/create:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.AddRoleReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      security:
+      - x-token: []
+      summary: 添加角色
+      tags:
+      - GAC/员工角色管理
+  /admin/staff_role/delete:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.UpdateRoleStatusReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      security:
+      - x-token: []
+      summary: 角色删除
+      tags:
+      - GAC/员工角色管理
+  /admin/staff_role/disable:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.UpdateRoleStatusReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      security:
+      - x-token: []
+      summary: 角色禁用/启用
+      tags:
+      - GAC/员工角色管理
+  /admin/staff_role/page:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.RolePageReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/adminApi.Response'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/assembler.RoleAssembler'
+                  type: array
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      security:
+      - x-token: []
+      summary: 角色列表
+      tags:
+      - GAC/员工角色管理
+  /admin/staff_role/update:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.UpdateRoleReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/adminApi.Response'
+      security:
+      - x-token: []
+      summary: 更新角色
+      tags:
+      - GAC/员工角色管理
+  /sso/account/login:
+    post:
+      consumes:
+      - application/json
+      description: 登录
+      parameters:
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.AccountLogin'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: expiry:时间
+          schema:
+            allOf:
+            - $ref: '#/definitions/ssoApi.Response'
+            - properties:
+                data:
+                  allOf:
+                  - $ref: '#/definitions/resp.LoginResp'
+                  - properties:
+                      token:
+                        allOf:
+                        - $ref: '#/definitions/ssoApi.token'
+                        - properties:
+                            access_token:
+                              type: string
+                            expiry:
+                              type: string
+                          type: object
+                    type: object
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+      security:
+      - x-token: []
+      tags:
+      - SSO/账户管理
+  /sso/account/provd_login:
+    post:
+      consumes:
+      - application/json
+      description: 服务商登录
+      parameters:
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.AccountLogin'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: expiry:时间
+          schema:
+            allOf:
+            - $ref: '#/definitions/ssoApi.Response'
+            - properties:
+                data:
+                  allOf:
+                  - $ref: '#/definitions/resp.LoginResp'
+                  - properties:
+                      token:
+                        allOf:
+                        - $ref: '#/definitions/ssoApi.token'
+                        - properties:
+                            access_token:
+                              type: string
+                            expiry:
+                              type: string
+                          type: object
+                    type: object
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+      security:
+      - x-token: []
+      tags:
+      - SSO/账户管理
+  /sso/auth/my_permission:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.PermissionAuthReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/ssoApi.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/resp.SsoMenuResps'
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+      security:
+      - x-token: []
+      summary: 我的权限（菜单+按钮）
+      tags:
+      - SSO/AUTH
+  /sso/auth/passport:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.SsoPassportAuthReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+      security:
+      - x-token: []
+      summary: Passport认证（后端服务之间调用）
+      tags:
+      - SSO/AUTH
+  /sso/auth/platform/info:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/ssoApi.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/assembler.AccountAdmin'
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+      security:
+      - x-token: []
+      summary: 我的信息（平台）
+      tags:
+      - SSO/AUTH
+  /sso/auth/platform/update:
+    post:
+      description: 更新
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.UpdateAccountAdmin'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: data=OK
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+      summary: 更新
+      tags:
+      - SSO/AUTH
+  /sso/auth/platform/update_password:
+    post:
+      description: 更新密码
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.AcctChangePasswd'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: data=OK
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+      summary: 更新密码
+      tags:
+      - SSO/AUTH
+  /sso/auth/provider/info:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/ssoApi.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/assembler.AccountProvider'
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+      security:
+      - x-token: []
+      summary: 我的信息（服务商）
+      tags:
+      - SSO/AUTH
+  /sso/auth/subclass/info:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+      security:
+      - x-token: []
+      summary: 我的信息（子账户）
+      tags:
+      - SSO/AUTH
+  /sso/auth/subclass/rest_password:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.AuthSubclassResetPasswordReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+      security:
+      - x-token: []
+      summary: 子账户重置密码
+      tags:
+      - SSO/AUTH
+  /sso/auth/subclass/update:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.AuthSubclassUpdateReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+      security:
+      - x-token: []
+      summary: 编辑我的子账户
+      tags:
+      - SSO/AUTH
+  /sso/menu/page:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.SubclassMenuReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/ssoApi.Response'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/assembler.MenuAssembler'
+                  type: array
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+      security:
+      - x-token: []
+      summary: 菜单列表
+      tags:
+      - SSO/菜单管理
+  /sso/permission/create:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.AddSubclassPermissionReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+      security:
+      - x-token: []
+      summary: 添加权限
+      tags:
+      - SSO/角色权限管理
+  /sso/permission/query:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.QuerySubclassPermissionReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/ssoApi.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/resp.QueryPermissionResp'
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+      security:
+      - x-token: []
+      summary: 查询权限
+      tags:
+      - SSO/角色权限管理
+  /sso/role/create:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.AddSubclassRoleReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+      security:
+      - x-token: []
+      summary: 添加角色
+      tags:
+      - SSO/角色管理
+  /sso/role/delete:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.UpdateRoleStatusReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+      security:
+      - x-token: []
+      summary: 角色删除
+      tags:
+      - SSO/角色管理
+  /sso/role/disable:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.UpdateRoleStatusReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+      security:
+      - x-token: []
+      summary: 角色禁用/启用
+      tags:
+      - SSO/角色管理
+  /sso/role/option:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.SubclassRoleReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/ssoApi.Response'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/assembler.RoleSubclassAssembler'
+                  type: array
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+      security:
+      - x-token: []
+      summary: 角色列表下拉
+      tags:
+      - SSO/角色管理
+  /sso/role/page:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.SubclassRolePageReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/ssoApi.Response'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/assembler.RoleSubclassAssembler'
+                  type: array
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+      security:
+      - x-token: []
+      summary: 角色列表
+      tags:
+      - SSO/角色管理
+  /sso/role/update:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.UpdateSubclassRoleReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+      security:
+      - x-token: []
+      summary: 更新角色
+      tags:
+      - SSO/角色管理
+  /sso/subclass/bind_role:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.AccountSubclassBindSubRoleReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+      security:
+      - x-token: []
+      summary: 子账户绑定权限
+      tags:
+      - SSO/子账户管理
+  /sso/subclass/create:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.AccountSubclassCreateReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+      security:
+      - x-token: []
+      summary: 创建子账户
+      tags:
+      - SSO/子账户管理
+  /sso/subclass/delete:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.AccountSubclassStatusReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+      security:
+      - x-token: []
+      summary: 删除子账户
+      tags:
+      - SSO/子账户管理
+  /sso/subclass/disable:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.AccountSubclassStatusReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+      security:
+      - x-token: []
+      summary: 启用/禁用子账户
+      tags:
+      - SSO/子账户管理
+  /sso/subclass/page:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: authorization
+        type: string
+      - description: The object content
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/req.AccountSubclassSearchReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/ssoApi.Response'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/resp.AccountSubclassResp'
+                  type: array
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ssoApi.Response'
+      security:
+      - x-token: []
+      summary: 子账户分页列表
+      tags:
+      - SSO/子账户管理
+swagger: "2.0"

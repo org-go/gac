@@ -1,0 +1,14 @@
+.vscode
+/.agollo
+/Makefile
+/payfun.gac.service.exe
+/logs
+.idea
+
+/test
+/test/*
+/vendor
+/**/*_test.go
+
+.vercel
+/docs/markdown
